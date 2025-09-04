@@ -7,4 +7,4 @@ Next phase of development includes developing a trading algorithm and execute tr
  
 Design doc: https://www.notion.so/Trading-Bot-Design-Doc-bfad2b49deef41c89aab29ca31bb886a?source=copy_link
 
-To run, run the main.py file
+To run, run the main.py file after pip installing requirements.txt
