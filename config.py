@@ -1,0 +1,50 @@
+# --------------- CANDLE SOCKET DATA CONFIG ---------------
+
+SYMBOL = "ETH-USD"
+COIN = "ETH"
+CSV_FILE = f"data/{COIN.lower()}_usd_1h.csv"
+GRANULARITY = 3600
+
+# --------------- GENERATE STRATEGY PARAMETERS ---------------
+
+OVERSOLD_LOWER = 10
+OVERSOLD_UPPER = 35
+OVERBOUGHT_LOWER = 65
+OVERBOUGHT_UPPER = 90
+
+BUY_PROPORTION_CHOICES  = [0.25, 0.33, 0.5, 1.0]
+SELL_PROPORTION_CHOICES = [0.5, 0.66, 0.75, 1.0]
+
+DEPTH = 3
+
+# --------------- GENETIC PROGRAMMING PARAMETERS ---------------
+POPULATION_SIZE = 200
+GENERATIONS = 100
+MUTATION_RATE = 0.15
+ELITE_FRACTION = 0.05  # top 5% kept unchanged
+SHARPE_WEIGHT = 0.5
+RETURN_WEIGHT = 0.4
+DRAWDOWN_WEIGHT = 0.1
+
+# --------------- EVAL STRATEGY PARAMETERS ---------------
+CANDLE_CUTOFF = 30000  # Starting candle index to evaluate from
+TEST_CURRENCIES = ['ltc', 'eth']
+TIMEFRAME = '1h'
+
+if TIMEFRAME == '1h':
+    PERIODS_PER_YEAR = 365 * 24
+elif TIMEFRAME == '4h':
+    PERIODS_PER_YEAR = (365 * 24) // 4
+elif TIMEFRAME == '1d':
+    PERIODS_PER_YEAR = 365
+else:
+    PERIODS_PER_YEAR = 365 * 24  # default to 1h
+
+BALANCE = 1000 # initial balance
+POSITION = 0.0 # amount of {SYMBOL} held
+
+# FEES
+MAKER_FEE = 0.0035
+TAKER_FEE = 0.0075
+
+RISK_FREE_ANNUAL = 0.0
